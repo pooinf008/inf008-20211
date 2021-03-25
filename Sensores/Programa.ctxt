@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Programa
+comment1.params=qtdeNos
+comment1.target=void\ popular(int)
+comment2.params=
+comment2.target=void\ lerTemperatura()
+comment3.params=maxAltura
+comment3.target=void\ lerTemperatura(double)
+numComments=4

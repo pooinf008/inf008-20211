@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Conjunto
+comment1.params=
+comment1.target=Conjunto()
+comment2.params=elementos
+comment2.target=Conjunto(int[])
+comment3.params=outro
+comment3.target=Conjunto(Conjunto)
+comment4.params=elemento
+comment4.target=void\ addElemento(int)
+comment5.params=
+comment5.target=int\ tamanho()
+comment6.params=inteiro
+comment6.target=void\ adicionar(int)
+comment7.params=inteiro
+comment7.target=boolean\ pertence(int)
+comment8.params=outro
+comment8.target=Conjunto\ UNIAO(Conjunto)
+comment9.params=outro
+comment9.target=Conjunto\ INTER(Conjunto)
+numComments=10

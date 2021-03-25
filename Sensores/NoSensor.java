@@ -97,7 +97,8 @@ public class NoSensor{
     public String toString(){
         return "[" + this.getId() + "]" + " (lat:" + this.getLatitude() +
                                    ", long: " + this.getLongitude() + 
-                                   ", h: " + this.getAltura() + ")";
+                                   ", h: " + this.getAltura() + ") " +
+                                   "Temp: " + this.getTemperatura() +"°C";
     }
         
 }
