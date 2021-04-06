@@ -1,9 +1,17 @@
 #BlueJ class context
 comment0.target=Programa
-comment1.params=qtdeNos
-comment1.target=void\ popular(int)
-comment2.params=
-comment2.target=void\ lerTemperatura()
-comment3.params=maxAltura
-comment3.target=void\ lerTemperatura(double)
-numComments=4
+comment1.params=qtdeSensor
+comment1.target=Programa(int)
+comment2.params=qtdeNos
+comment2.target=void\ popular(int)
+comment3.params=
+comment3.target=void\ lerTemperatura()
+comment4.params=
+comment4.target=void\ exibirArea()
+comment5.params=maxAltura
+comment5.target=void\ exibirArea(double)
+comment6.params=
+comment6.target=void\ rodar()
+comment7.params=args
+comment7.target=void\ main(java.lang.String[])
+numComments=8
