@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=LivroContabil
+comment1.params=
+comment1.target=LivroContabil()
+comment2.params=descricao\ contaCredito\ contaDebito\ valor
+comment2.target=void\ registarFatoContabil(java.lang.String,\ Conta,\ Conta,\ double)
+comment3.params=lancamento
+comment3.target=void\ addLancamento(Lancamento)
+numComments=4

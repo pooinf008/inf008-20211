@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=RegistroContabil
+comment1.params=nomeEmpresa\ cnpjEmpresa
+comment1.target=RegistroContabil(java.lang.String,\ java.lang.String)
+comment2.params=nomeEmpresa
+comment2.target=void\ setNomeEmpresa(java.lang.String)
+comment3.params=cnpjEmpresa
+comment3.target=void\ setCnpjEmpresa(java.lang.String)
+comment4.params=descricao\ nomeCCredito\ nomeCDebito\ valor
+comment4.target=void\ registarFatoContabil(java.lang.String,\ java.lang.String,\ java.lang.String,\ double)
+numComments=5
