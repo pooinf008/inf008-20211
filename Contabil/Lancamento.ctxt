@@ -1,3 +1,15 @@
 #BlueJ class context
 comment0.target=Lancamento
-numComments=1
+comment1.params=descricao\ contaCredito\ contaDebito\ valor
+comment1.target=Lancamento(java.lang.String,\ Conta,\ Conta,\ double)
+comment2.params=descricao
+comment2.target=void\ setDescricao(java.lang.String)
+comment3.params=contaCredito
+comment3.target=void\ setContaCredito(Conta)
+comment4.params=contaDebito
+comment4.target=void\ setContaDebito(Conta)
+comment5.params=valor
+comment5.target=void\ setValor(double)
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7

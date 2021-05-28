@@ -6,9 +6,7 @@ public class BalancoContabil{
         this.contas = new Conta[0];
     }    
     
-    private void asmPlano(){
-//        this.addConta(new Ativo("Imoveis", 0));
-    }    
+
     
     
     public void addConta(Conta conta){
@@ -27,12 +25,18 @@ public class BalancoContabil{
         return null;      
     }    
     
-    //TODO
     public void ajustar(String nomeCCredito, 
                         String nomeCDebito, 
                         double valor){
         this.findByNome(nomeCCredito).creditar(valor);
         this.findByNome(nomeCDebito).debitar(valor);
+    } 
+    
+    public String toString(){
+        String rep = "";
+        for(Conta conta : this.contas)
+          rep = rep + conta + "\n";
+        return rep;  
     }    
     
 }

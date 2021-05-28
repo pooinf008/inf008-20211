@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=Passivo
-comment1.params=valor
-comment1.target=void\ debitar(double)
+comment1.params=nome\ saldo
+comment1.target=Passivo(java.lang.String,\ double)
 comment2.params=valor
-comment2.target=void\ creditar(double)
-numComments=3
+comment2.target=void\ debitar(double)
+comment3.params=valor
+comment3.target=void\ creditar(double)
+numComments=4

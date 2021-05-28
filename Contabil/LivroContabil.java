@@ -6,12 +6,11 @@ public class LivroContabil{
         this.lancamentos = new Lancamento[0];
      }    
     
-    //TODO
     public void registarFatoContabil(String descricao,
                                      Conta contaCredito, 
                                      Conta contaDebito, 
                                      double valor){
-        this.addLancamento(new Lancamento());                                         
+        this.addLancamento(new Lancamento(descricao, contaCredito, contaDebito, valor));                                         
         
     } 
     
@@ -21,6 +20,12 @@ public class LivroContabil{
           novo[i] = this.lancamentos[i];
         novo[novo.length - 1] = lancamento;
         this.lancamentos = novo;
-    }      
+    } 
     
+    public String toString(){
+        String rep = "";
+        for(Lancamento lancamento : this.lancamentos)
+          rep = rep + lancamento + "\n";
+        return rep;  
+    }
 }

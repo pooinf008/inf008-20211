@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=TipoConta
+comment1.params=codTipo
+comment1.target=TipoConta(int)
+comment2.params=
+comment2.target=int\ value()
+numComments=3
