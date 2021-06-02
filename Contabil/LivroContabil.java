@@ -6,11 +6,11 @@ public class LivroContabil{
         this.lancamentos = new Lancamento[0];
      }    
     
-    public void registarFatoContabil(String descricao,
+    public void registarFatoContabil(java.util.Date data, String descricao,
                                      Conta contaCredito, 
                                      Conta contaDebito, 
                                      double valor){
-        this.addLancamento(new Lancamento(descricao, contaCredito, contaDebito, valor));                                         
+        this.addLancamento(new Lancamento(data, descricao, contaCredito, contaDebito, valor));                                         
         
     } 
     
@@ -24,8 +24,13 @@ public class LivroContabil{
     
     public String toString(){
         String rep = "";
+        new Ordenador(this.lancamentos).ordenar();
         for(Lancamento lancamento : this.lancamentos)
           rep = rep + lancamento + "\n";
         return rep;  
     }
+    
+    
+    
+    
 }

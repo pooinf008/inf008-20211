@@ -11,23 +11,23 @@ public class App{
         this.registro = new RegistroContabil("ACME", "0000000000000");
     }    
     
-    public void run(){
-        this.registro.addConta("IMOVEIS", App.ATIVO);
-        this.registro.addConta("CAIXA", App.ATIVO);
-        this.registro.addConta("CAPITAL", App.PATR_LIQUIDO);
-        this.registro.addConta("EMPRESTIMO", App.PASSIVO);
+    public void run() throws java.text.ParseException{
+        this.registro.addConta("1.3", "IMOVEIS", App.ATIVO);
+        this.registro.addConta("1.1","CAIXA", App.ATIVO);
+        this.registro.addConta("3.1", "CAPITAL", App.PATR_LIQUIDO);
+        this.registro.addConta("2.1", "EMPRESTIMO", App.PASSIVO);
         
-        this.registro.registarFatoContabil("Integralizacao",
-                                           "CAIXA", "CAPITAL", 5000);
-        this.registro.registarFatoContabil("Compra da Sede",
+        this.registro.registarFatoContabil("01/02/2021",  "Compra da Sede",
                                            "IMOVEIS", "CAIXA", 2000);
-        this.registro.registarFatoContabil("Compra da Sede",
+        this.registro.registarFatoContabil("01/01/2021", "Integralizacao",
+                                           "CAIXA", "CAPITAL", 5000);
+        this.registro.registarFatoContabil("01/03/2021", "Tomada de Emprestimo Bco XXX",
                                            "CAIXA", "EMPRESTIMO", 3000);
                                            
         System.out.println(this.registro);                                           
     }   
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws java.text.ParseException{
         (new App()).run();
     }    
     

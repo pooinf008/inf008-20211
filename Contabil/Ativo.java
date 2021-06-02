@@ -1,7 +1,7 @@
 public class Ativo extends Conta{
     
-    public Ativo(String nome, double saldo){
-        super(nome, saldo);
+    public Ativo(String codigo, String nome, double saldo){
+        super(codigo, nome, saldo);
     }     
     
     public void debitar(double valor){
@@ -12,5 +12,7 @@ public class Ativo extends Conta{
         saldo -= valor;
     }    
     
-    
+    public String getCodTipo(){
+        return "A";
+    }    
 }

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Ordenador
+comment1.params=ordenaveis
+comment1.target=Ordenador(Ordenavel[])
+comment2.params=
+comment2.target=void\ ordenar()
+numComments=3

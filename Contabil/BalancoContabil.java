@@ -34,9 +34,11 @@ public class BalancoContabil{
     
     public String toString(){
         String rep = "";
+        new Ordenador(this.contas).ordenar();
         for(Conta conta : this.contas)
           rep = rep + conta + "\n";
         return rep;  
-    }    
+    }  
+      
     
 }
