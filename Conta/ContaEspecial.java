@@ -9,6 +9,7 @@ public class ContaEspecial extends ContaCorrente{
     
     public ContaEspecial(double saldo, double limite){
         super(saldo);
+        this.setLimite(limite);
     }    
     
     public ContaEspecial(double saldo){

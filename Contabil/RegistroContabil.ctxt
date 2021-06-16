@@ -12,4 +12,6 @@ comment5.params=cod\ nome\ tipo
 comment5.target=void\ addConta(java.lang.String,\ java.lang.String,\ int)
 comment6.params=
 comment6.target=java.lang.String\ toString()
-numComments=7
+comment7.params=
+comment7.target=java.lang.String\ getRelatorioPorValor()
+numComments=8

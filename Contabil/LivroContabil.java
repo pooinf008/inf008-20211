@@ -24,11 +24,20 @@ public class LivroContabil{
     
     public String toString(){
         String rep = "";
-        new Ordenador(this.lancamentos).ordenar();
+        new Ordenador().ordenar(this.lancamentos);
         for(Lancamento lancamento : this.lancamentos)
           rep = rep + lancamento + "\n";
         return rep;  
     }
+    
+    
+    public String relatorioPorValor(){
+        String rep = "";
+        new Ordenador().ordenar(this.lancamentos, new ComparadorLancamentoPorDescricao());
+        for(Lancamento lancamento : this.lancamentos)
+          rep = rep + lancamento + "\n";
+        return rep;  
+    }    
     
     
     

@@ -8,4 +8,6 @@ comment3.params=lancamento
 comment3.target=void\ addLancamento(Lancamento)
 comment4.params=
 comment4.target=java.lang.String\ toString()
-numComments=5
+comment5.params=
+comment5.target=java.lang.String\ relatorioPorValor()
+numComments=6

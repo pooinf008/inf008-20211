@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=MemoriaExterna
+comment1.params=descricao\ capacidade\ preco
+comment1.target=MemoriaExterna(java.lang.String,\ long,\ double)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3

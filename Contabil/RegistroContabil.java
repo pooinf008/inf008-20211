@@ -50,5 +50,9 @@ public class RegistroContabil{
         return rep;
     }    
     
+    public String getRelatorioPorValor(){
+        return this.livro.relatorioPorValor();
+    };    
+    
     
 }

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ItemVenda
+comment1.params=valor
+comment1.target=ItemVenda(double)
+comment2.params=
+comment2.target=double\ getPreco()
+numComments=3

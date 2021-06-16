@@ -39,9 +39,17 @@ public class Lancamento implements Ordenavel{
     
     
     public String getFmtData(){
-        java.text.DateFormat dateFormat = new java.text.SimpleDateFormat("dd/MM/yyyy");  
+        java.text.DateFormat dateFormat = new java.text.SimpleDateFormat("dd/MM/YYYY");  
         return dateFormat.format(this.data);          
-    }        
+    }   
+    
+    public double getValor(){
+        return this.valor;
+    }    
+    
+    public String getDescricao(){
+        return this.descricao;
+    }      
     
     public String toString(){
         return this.getFmtData() +  "[" + this.descricao + "] D - " + this.debito.getNome() +
@@ -50,6 +58,8 @@ public class Lancamento implements Ordenavel{
     
    
     public int compare(Ordenavel outro){
+        if(!(outro instanceof Lancamento))        
+            return 0;    
         Lancamento outroLancamento = (Lancamento) outro;
         if(this.data.before(outroLancamento.data))
             return - 1;

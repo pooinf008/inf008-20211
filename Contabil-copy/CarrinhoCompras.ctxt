@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=CarrinhoCompras
+comment1.params=item
+comment1.target=void\ addItem(ItemVenda)
+comment2.params=
+comment2.target=double\ getPreco()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4
