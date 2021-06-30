@@ -1,5 +1,10 @@
-package contabil;
-public abstract class Conta extends Object implements Ordenavel, java.io.Serializable{
+package contabil.model.entity;
+
+import java.util.Comparator;
+
+import contabil.model.order.Ordenavel;
+
+public abstract class Conta extends Object implements java.io.Serializable{
     
     private String codigo;
     private String nome;
@@ -28,7 +33,11 @@ public abstract class Conta extends Object implements Ordenavel, java.io.Seriali
     }    
     
     
-    public String getNome(){
+    public double getSaldo() {
+		return saldo;
+	}
+
+	public String getNome(){
         return this.nome;
     }  
     
@@ -42,12 +51,12 @@ public abstract class Conta extends Object implements Ordenavel, java.io.Seriali
     
     public abstract String getCodTipo();
     
-    public int compare(Ordenavel outra){
-        if(!(outra instanceof Conta))
-            return 0;
-        Conta outraConta = (Conta) outra;
-        return this.codigo.compareToIgnoreCase(outraConta.codigo);
+    public int compare(Conta outra){
+        return this.codigo.compareToIgnoreCase(outra.codigo);
     }
+    
+
+    
     
     public boolean equals(Object object){
         if(!(object instanceof Conta))

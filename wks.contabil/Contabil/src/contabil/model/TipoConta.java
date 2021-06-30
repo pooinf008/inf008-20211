@@ -1,4 +1,4 @@
-package contabil;
+package contabil.model;
 public enum TipoConta{
     
     Ativo(1), Passivo(2), PatrLiquido(3);

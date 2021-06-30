@@ -1,6 +1,9 @@
-package contabil;
+package contabil.model;
 
-import contabil.comparador.ComparadorLancamentoPorDescricao;
+import contabil.model.entity.Conta;
+import contabil.model.entity.Lancamento;
+import contabil.model.order.ComparadorLancamentoPorDescricao;
+import contabil.model.order.Ordenador;
 
 public class LivroContabil{
     private Lancamento[] lancamentos;

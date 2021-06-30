@@ -1,4 +1,7 @@
-package contabil;
+package contabil.model.entity;
+
+import contabil.model.order.Ordenavel;
+
 public class Lancamento implements Ordenavel{
     private java.util.Date data;
     private String descricao;

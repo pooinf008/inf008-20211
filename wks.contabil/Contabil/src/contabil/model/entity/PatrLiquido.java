@@ -1,4 +1,4 @@
-package contabil;
+package contabil.model.entity;
 public class PatrLiquido extends Conta{
     
     public PatrLiquido(String codigo, String nome, double saldo){

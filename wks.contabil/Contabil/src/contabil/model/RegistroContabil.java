@@ -1,8 +1,15 @@
-package contabil;
+package contabil.model;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import contabil.model.entity.Ativo;
+import contabil.model.entity.Conta;
+import contabil.model.entity.Passivo;
+import contabil.model.entity.PatrLiquido;
+import contabil.model.exception.ContaInexistenteException;
 
 public class RegistroContabil{
     private String nomeEmpresa;
@@ -10,7 +17,7 @@ public class RegistroContabil{
     private BalancoContabil balanco;
     private LivroContabil livro;
     
-    public RegistroContabil(String nomeEmpresa, String cnpjEmpresa){
+    public RegistroContabil(String nomeEmpresa, String cnpjEmpresa) throws Exception{
         this.setNomeEmpresa(nomeEmpresa);
         this.setCnpjEmpresa(cnpjEmpresa);
         this.balanco = new BalancoContabil();
@@ -27,7 +34,7 @@ public class RegistroContabil{
     
     public void registarFatoContabil(String sData, String descricao, String nomeCDebito, 
                                      String nomeCCredito, double valor) 
-                                     throws ParseException{
+                                     throws Exception{
         Date data = (new SimpleDateFormat("dd/MM/yyyy")).parse(sData);                                         
         Conta credito = this.balanco.findByNome(nomeCCredito);   
         Conta debito = this.balanco.findByNome(nomeCDebito);        
@@ -35,7 +42,7 @@ public class RegistroContabil{
         this.balanco.ajustar(nomeCCredito, nomeCDebito, valor);                                
     };
     
-    public void addConta(String cod, String nome, int tipo){
+    public void addConta(String cod, String nome, int tipo) throws Exception{
         Conta conta = null;
         if(TipoConta.Ativo.value() == tipo)
             conta = new Ativo(cod, nome, 0);

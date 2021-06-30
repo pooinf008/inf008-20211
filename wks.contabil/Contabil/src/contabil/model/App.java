@@ -1,4 +1,17 @@
-package contabil;
+package contabil.model;
+
+import java.io.IOException;
+import java.text.ParseException;
+
+import contabil.model.entity.Ativo;
+import contabil.model.entity.Conta;
+import contabil.model.entity.Lancamento;
+import contabil.model.entity.Passivo;
+import contabil.model.entity.PatrLiquido;
+import contabil.model.exception.ContaInexistenteException;
+import contabil.model.exception.ContabilException;
+import contabil.model.order.Ordenador;
+import contabil.model.order.Ordenavel;
 
 public class App{
     
@@ -9,10 +22,11 @@ public class App{
     private RegistroContabil registro;
         
     
-    public App(){
+    public App() throws Exception{
         this.registro = new RegistroContabil("ACME", "0000000000000");
     }    
     
+/*    
     public void dummy(){
         Ordenavel[] ordenaveis = new Ordenavel[8];
         ordenaveis[0] = new Ativo("C", "AtivoC", 10);
@@ -40,32 +54,47 @@ public class App{
         for(Ordenavel o : ordenaveis)
            System.out.println(o);
         
-    }    
+    }*/    
         
     
     
-    public void run() throws java.text.ParseException{
-        this.registro.addConta("1.3", "IMOVEIS", App.ATIVO);
-        this.registro.addConta("1.1","CAIXA", App.ATIVO);
-        this.registro.addConta("3.1", "CAPITAL", App.PATR_LIQUIDO);
-        this.registro.addConta("2.1", "EMPRESTIMO", App.PASSIVO);
+    public void run() throws Exception{
+//        this.registro.addConta("1.3", "IMOVEIS", App.ATIVO);
+//        this.registro.addConta("1.1","CAIXA", App.ATIVO);
+//        this.registro.addConta("3.1", "CAPITAL", App.PATR_LIQUIDO);
+//        this.registro.addConta("2.1", "EMPRESTIMO", App.PASSIVO);
+        try {
+			this.registro.registarFatoContabil("01/02/2021",  "Compra da Sede",
+			                                   "IMOVEIS", "CAIXA", 2000);
+			this.registro.registarFatoContabil("01/01/2021", "Integralizacao",
+			                                   "CAIXA", "CAPITAL", 5000);
+			this.registro.registarFatoContabil("01/03/2021", "Tomada de Emprestimo Bco XXX",
+			                                   "CAIXA", "EMPRESTIMO", 3000);
+		} catch (ContaInexistenteException | ParseException e) {
+			throw new ContabilException(e);
+		}finally {
+			
+		}
         
-        this.registro.registarFatoContabil("01/02/2021",  "Compra da Sede",
-                                           "IMOVEIS", "CAIXA", 2000);
-        this.registro.registarFatoContabil("01/01/2021", "Integralizacao",
-                                           "CAIXA", "CAPITAL", 5000);
-        this.registro.registarFatoContabil("01/03/2021", "Tomada de Emprestimo Bco XXX",
-                                           "CAIXA", "EMPRESTIMO", 3000);
-                                           
         System.out.println(this.registro);                                   
         System.out.println("***********************************");    
         System.out.println("***********************************");                                           
-        System.out.println(this.registro.getRelatorioPorValor());                                                   
+        System.out.println(this.registro.getRelatorioPorValor());
+                                                           
     }   
     
-    public static void main(String[] args) throws java.text.ParseException{
-        (new App()).run();
-//        new App().dummy();
+    
+    public void lancadorExcecao() {
+    	Conta c = null;
+    	c.creditar(100);
+    }
+    
+    public static void main(String[] args) throws Exception{
+        try {
+			(new App()).run();
+		} catch (ContabilException e) {
+			e.printStackTrace();
+		}
     }    
     
 }

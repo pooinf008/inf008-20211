@@ -1,4 +1,4 @@
-package contabil;
+package contabil.model.entity;
 public class Passivo extends Conta{
     
     public Passivo(String codigo, String nome, double saldo){

@@ -1,8 +1,6 @@
-package contabil.comparador;
+package contabil.model.order;
 
-import contabil.Comparador;
-import contabil.Lancamento;
-import contabil.Ordenavel;
+import contabil.model.entity.Lancamento;
 
 public class ComparadorLancamentoPorDescricao implements Comparador{
     

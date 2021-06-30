@@ -1,4 +1,5 @@
-package contabil;
+package contabil.model.order;
+
 public class Ordenador{
     
     public Ordenador(){

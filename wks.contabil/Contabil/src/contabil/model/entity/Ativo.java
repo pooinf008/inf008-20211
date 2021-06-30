@@ -1,4 +1,4 @@
-package contabil;
+package contabil.model.entity;
 public class Ativo extends Conta{
     
     public Ativo(String codigo, String nome, double saldo){
@@ -15,5 +15,7 @@ public class Ativo extends Conta{
     
     public String getCodTipo(){
         return "A";
-    }    
+    }
+
+   
 }
