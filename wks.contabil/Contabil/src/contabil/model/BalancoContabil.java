@@ -24,6 +24,9 @@ public class BalancoContabil{
     	this.contasDAO.salvar(conta);
     }    
     
+    public Collection<Conta> findAll() throws Exception{
+    	return this.contasDAO.findAll();
+    }      
     
     public Conta findByNome(String nome) throws Exception{
     	return this.contasDAO.findByNome(nome);

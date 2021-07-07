@@ -1,15 +1,15 @@
 package contabil.model;
 
-import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import contabil.model.entity.Ativo;
 import contabil.model.entity.Conta;
 import contabil.model.entity.Passivo;
 import contabil.model.entity.PatrLiquido;
-import contabil.model.exception.ContaInexistenteException;
 
 public class AppRegistroContabil implements ContabilLogicaIF{
     private String nomeEmpresa;
@@ -53,7 +53,16 @@ public class AppRegistroContabil implements ContabilLogicaIF{
         else if(TipoConta.PatrLiquido.value() == tipo)    
             conta = new PatrLiquido(cod, nome, 0);
         this.balanco.addConta(conta);
-    }  
+    } 
+    
+    
+    public Collection<String> getNomeContas() throws Exception{
+    	Collection<Conta> contas = this.balanco.findAll();
+    	List<String> nomeContas = new ArrayList<String>();
+    	for(Conta c : contas)
+    		nomeContas.add(c.getNome());
+    	return nomeContas;
+    }
     
     
     public String toString(){

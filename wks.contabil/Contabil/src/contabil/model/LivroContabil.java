@@ -1,38 +1,49 @@
 package contabil.model;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+
 import contabil.model.entity.Conta;
 import contabil.model.entity.Lancamento;
 import contabil.model.order.ComparadorLancamentoPorDescricao;
 import contabil.model.order.Ordenador;
+import contabil.persistencia.ContaDAOIF;
+import contabil.persistencia.LancamentoDAOIF;
+import contabil.persistencia.LancamentoDAOSQL;
 
 public class LivroContabil{
-    private Lancamento[] lancamentos;
+	
+	private LancamentoDAOIF lancamentoDAO;
     
-    
-    public LivroContabil(){
-        this.lancamentos = new Lancamento[0];
-     }    
+    public LivroContabil() throws SQLException{
+		this.lancamentoDAO = new LancamentoDAOSQL();
+    }    
     
     public void registarFatoContabil(java.util.Date data, String descricao,
                                      Conta contaCredito, 
                                      Conta contaDebito, 
-                                     double valor){
+                                     double valor) throws Exception{
         this.addLancamento(new Lancamento(data, descricao, contaCredito, contaDebito, valor));                                         
         
     } 
     
-    private void addLancamento(Lancamento lancamento){
-        Lancamento[] novo = new Lancamento[this.lancamentos.length + 1];
-        for(int i = 0; i < this.lancamentos.length; i++)
-          novo[i] = this.lancamentos[i];
-        novo[novo.length - 1] = lancamento;
-        this.lancamentos = novo;
+    private void addLancamento(Lancamento lancamento) throws Exception{
+    	this.lancamentoDAO.salvar(lancamento);
     } 
     
     public String toString(){
+    	
+    	Collection<Lancamento> lancamentos;
+		try {
+			lancamentos = this.lancamentoDAO.findAll();
+		} catch (Exception e) {
+			lancamentos = new ArrayList<Lancamento>();
+			e.printStackTrace();
+		}
+    	
         String rep = "";
-        new Ordenador().ordenar(this.lancamentos);
-        for(Lancamento lancamento : this.lancamentos)
+        for(Lancamento lancamento : lancamentos)
           rep = rep + lancamento + "\n";
         return rep;  
     }
@@ -40,8 +51,14 @@ public class LivroContabil{
     
     public String relatorioPorValor(){
         String rep = "";
-        new Ordenador().ordenar(this.lancamentos, new ComparadorLancamentoPorDescricao());
-        for(Lancamento lancamento : this.lancamentos)
+    	Collection<Lancamento> lancamentos;
+		try {
+			lancamentos = this.lancamentoDAO.findAll();
+		} catch (Exception e) {
+			lancamentos = new ArrayList<Lancamento>();
+			e.printStackTrace();
+		}
+        for(Lancamento lancamento : lancamentos)
           rep = rep + lancamento + "\n";
         return rep;  
     }    

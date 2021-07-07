@@ -1,5 +1,7 @@
 package contabil.model.entity;
 
+import java.util.Date;
+
 import contabil.model.order.Ordenavel;
 
 public class Lancamento implements Ordenavel{
@@ -9,7 +11,7 @@ public class Lancamento implements Ordenavel{
     private Conta credito;
     private Conta debito;
     
-    public Lancamento(java.util.Date data, String descricao,
+    public Lancamento(Date data, String descricao,
                       Conta contaCredito, 
                       Conta contaDebito, 
                       double valor){
@@ -41,6 +43,10 @@ public class Lancamento implements Ordenavel{
         this.valor = valor;
     }    
     
+    public Date getData() {
+    	return this.data;
+    }
+    
     
     public String getFmtData(){
         java.text.DateFormat dateFormat = new java.text.SimpleDateFormat("dd/MM/YYYY");  
@@ -70,8 +76,15 @@ public class Lancamento implements Ordenavel{
         else if (this.data.after(outroLancamento.data))   
             return + 1;
         return 0;
-    }         
+    }
+
+	public Conta getContaCredito() {
+		return this.credito;
+	}         
     
+	public Conta getContaDebito() {
+		return this.debito;
+	}         
     
     
                         
