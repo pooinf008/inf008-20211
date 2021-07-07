@@ -19,11 +19,11 @@ public class App{
     private static final int  PASSIVO = 2;
     private static final int  PATR_LIQUIDO = 3;
     
-    private RegistroContabil registro;
+    private AppRegistroContabil registro;
         
     
     public App() throws Exception{
-        this.registro = new RegistroContabil("ACME", "0000000000000");
+        this.registro = new AppRegistroContabil();
     }    
     
 /*    

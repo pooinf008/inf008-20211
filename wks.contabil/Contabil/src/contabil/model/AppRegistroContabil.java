@@ -11,18 +11,20 @@ import contabil.model.entity.Passivo;
 import contabil.model.entity.PatrLiquido;
 import contabil.model.exception.ContaInexistenteException;
 
-public class RegistroContabil{
+public class AppRegistroContabil implements ContabilLogicaIF{
     private String nomeEmpresa;
     private String cnpjEmpresa;
     private BalancoContabil balanco;
     private LivroContabil livro;
     
-    public RegistroContabil(String nomeEmpresa, String cnpjEmpresa) throws Exception{
-        this.setNomeEmpresa(nomeEmpresa);
-        this.setCnpjEmpresa(cnpjEmpresa);
+    public AppRegistroContabil() throws Exception{
+        this.setNomeEmpresa("FIXO");
+        this.setCnpjEmpresa("0000");
         this.balanco = new BalancoContabil();
         this.livro = new LivroContabil();
     }  
+    
+    
     
     private void setNomeEmpresa(String nomeEmpresa){
         this.nomeEmpresa = nomeEmpresa;    
